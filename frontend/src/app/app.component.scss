@@ -1,0 +1,33 @@
+/* Sidenav */
+
+mat-sidenav-container{
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+}
+
+.shadow {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: background-color 0.1s ease-in-out;
+}
+
+mat-sidenav{
+  border-radius: 0 !important;
+  transition: width 0.2s ease-in-out;
+  border: 0;
+}
+
+@media (max-width: 450px) {
+  .content {
+    margin-left: 0;
+    min-height: calc(100vh - 70px);
+  }
+}

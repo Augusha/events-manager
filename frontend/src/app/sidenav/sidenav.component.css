@@ -1,0 +1,51 @@
+.nav-list{
+  padding: 30px 15px 15px;
+}
+
+.list-item{
+  min-height: 60px;
+  max-height: 60px;
+  min-width: 60px;
+  margin-bottom: 20px;
+  border-radius: 15px !important;
+}
+
+.search-form{
+  border: none;
+}
+
+.search-input {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  font-size: 16px;
+}
+
+.selected-menu-item{
+}
+
+.selected-menu-item .item-name{
+}
+
+.item-icon{
+  transform: scale(1.4);
+  margin-left: 18px !important;
+}
+
+.item-name{
+}
+
+.list-item:hover, .list-item:focus{
+}
+
+.list-item:hover span, .list-item:focus span{
+}
+
+

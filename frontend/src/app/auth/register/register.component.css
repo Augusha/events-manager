@@ -1,0 +1,19 @@
+.form {
+}
+
+.name-fields {
+  margin-top: 15px;
+}
+
+.half-fields {
+  display: flex;
+  gap: 16px;
+  }
+
+.half-width {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}

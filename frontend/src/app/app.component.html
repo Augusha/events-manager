@@ -1,0 +1,17 @@
+<app-header *ngIf="!router.url.includes('login') && !router.url.includes('signup')"/>
+<mat-sidenav-container>
+  <mat-sidenav *ngIf="!router.url.includes('login') && !router.url.includes('signup')" opened mode="side" [style.width]="sidenavService.sidenavWidth()">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content [style.margin-left]="sidenavService.minWidth" >
+    <div class="content">
+      <router-outlet/>
+      <div *ngIf="!router.url.includes('login') && !router.url.includes('signup')" class="shadow"
+           [style.width]="sidenavService.sidenavShadowSize()"
+           [style.height]="sidenavService.sidenavShadowSize()"
+           [style.background-color]="sidenavService.sidenavShadowColor()"
+           (click)="toggleMenu()"
+      ></div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

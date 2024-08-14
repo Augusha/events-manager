@@ -1,0 +1,51 @@
+.container {
+  padding: 30px;
+}
+
+.header-text {
+  font-size: 25px;
+  margin-left: 30px;
+  height: 100%;
+}
+
+.option-container {
+  padding: 15px 30px 15px 30px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.sub-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+
+.option-text {
+  font-size: 18px;
+  margin: 0 20px 0 0;
+  height: 100%;
+}
+
+.option-last-text {
+  margin: 0;
+}
+
+.lang-slide {
+  margin-right: 15px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .option-container {
+  }
+}
+
+@media (max-width: 900px) {
+}
+

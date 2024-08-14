@@ -1,0 +1,469 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-palette: (
+  50 : #efefef,
+  100 : #c3c3c3,
+  200 : #9c9c9c,
+  300 : #747474,
+  400 : #565656,
+  500 : #383838,
+  600 : #323232,
+  700 : #2b2b2b,
+  800 : #242424,
+  900 : #171717,
+  A100 : #ef7171,
+  A200 : #ea4343,
+  A400 : #fa0000,
+  A700 : #e00000,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+$secondary-palette: (
+  50 : #222222,
+  100 : #323232,
+  200 : #424242,
+  300 : #4e4e4e,
+  400 : #515151,
+  500 : #6e6e6e,
+  600 : #888888,
+  700 : #aeaeae,
+  800 : #d1d1d1,
+  900 : #ffffff,
+  contrast: (
+    50: #fffff,
+    100: #fffff,
+    200: #fffff,
+    300: #fffff,
+    400: #fffff,
+    500: #fffff,
+    600: #fffff,
+    700: #fffff,
+    800: #fffff,
+    900: #fffff,
+  )
+);
+
+$my-primary: mat.m2-define-palette($primary-palette);
+$my-accent: mat.m2-define-palette($secondary-palette);
+$my-warn: mat.m2-define-palette($primary-palette);
+
+$my-light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-primary,
+    warn: $my-primary,
+  )));
+
+$my-dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $my-accent,
+    accent: $my-accent,
+    warn: $my-accent,
+  )
+));
+
+body.light-theme {
+  @include mat.all-component-colors($my-light-theme);
+}
+
+body.dark-theme {
+  @include mat.all-component-colors($my-dark-theme);
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+body.light-theme * {
+  .first {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 500);
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  mat-sidenav {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50) !important;
+
+    mat-icon, .item-name {
+      color: mat.m2-get-color-from-palette($primary-palette, 300) !important;
+    }
+
+    .selected-menu-item {
+      background-color: white !important;
+
+      mat-icon, .item-name {
+        color: mat.m2-get-color-from-palette($primary-palette, 400) !important;
+      }
+    }
+
+    .lang-slide * {
+      fill: mat.m2-get-color-from-palette($primary-palette, 50) !important;;
+    }
+  }
+
+  mat-toolbar .content {
+    border-color: mat.m2-get-color-from-palette($primary-palette, 50);
+
+    .person-icon-button {
+      background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+    }
+
+    .person-icon, chat-icon {
+      color: mat.m2-get-color-from-palette($primary-palette, 100);
+    }
+  }
+
+  .back-link {
+    color: mat.m2-get-color-from-palette($primary-palette, 600);
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .back-link:hover {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .divider-text {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+
+  .primary-button {
+    background-color: #3982df !important;
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .secondary-button {
+    border: 1px solid mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .dark-button {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 500);
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .gradient {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 49%);
+  }
+  .categories-labels, .event-limit {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+  .event-location {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+
+  .first {
+    .gradient {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, mat.m2-get-color-from-palette($primary-palette, 500) 49%);
+    }
+    .categories-labels, .event-limit {
+      color: mat.m2-get-color-from-palette($primary-palette, 200);
+    }
+    .event-location {
+      color: mat.m2-get-color-from-palette($primary-palette, 300);
+    }
+  }
+
+  .image-placeholder {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .messages-title, .chats-title {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 500);
+  }
+
+  .messages-title p, .chats-title p{
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .chat-messages, icon-placeholder {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .message, .no-chat-selected p {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .icon-placeholder {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+    mat-icon {
+      color: mat.m2-get-color-from-palette($primary-palette, 100);
+    }
+  }
+
+  .input-container, .no-chat-selected {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .messenger-chats {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 200);
+  }
+
+  .message-input {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  *::-webkit-scrollbar {
+    background: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+  .chat-icon-button {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .chat-icon {
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .chat-button-list {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+    color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .chat-message {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+
+  .my-message {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 600);
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .message-actions mat-icon {
+    color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+}
+
+body.dark-theme * {
+
+  .highcharts-legend-box text {
+    color: mat.m2-get-color-from-palette($primary-palette, 50) !important;
+  }
+
+  .first {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+    color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .last {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+    color: mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  mat-card, mat-sidenav, mat-toolbar .content {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 500);
+    border: none;
+  }
+
+  .create-container * {
+    .mat-mdc-text-field-wrapper {
+      background-color: mat.m2-get-color-from-palette($primary-palette, 600) !important;
+    }
+  }
+
+  .person-icon, .notifications-icon, chat-icon {
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  .selected-menu-item {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 600) !important;
+    color: mat.m2-get-color-from-palette($primary-palette, 50);
+  }
+
+  mat-sidenav {
+    mat-icon, .item-name {
+      color: mat.m2-get-color-from-palette($primary-palette, 100) !important;
+    }
+  }
+
+  .selected-menu-item {
+    mat-icon, .item-name {
+      color: mat.m2-get-color-from-palette($primary-palette, 50) !important;
+    }
+  }
+
+  .back-link {
+    color: mat.m2-get-color-from-palette($primary-palette, 200);
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .back-link:hover {
+    color: mat.m2-get-color-from-palette($primary-palette, 100);
+    background-color: mat.m2-get-color-from-palette($primary-palette, 800);
+  }
+
+  .auth-container {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .divider-text {
+    color: mat.m2-get-color-from-palette($primary-palette, 400);
+  }
+
+  .primary-button {
+    background-color: #3982df !important;
+    color: white !important;
+  }
+
+  .secondary-button {
+    border: 1px solid mat.m2-get-color-from-palette($primary-palette, 100);
+  }
+
+  .dark-button {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+    color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  mat-hint {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+
+  .gradient {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, mat.m2-get-color-from-palette($primary-palette, 500) 49%);
+  }
+  .categories-labels, .event-limit {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+  .event-location {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+
+  .first {
+    .gradient {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, mat.m2-get-color-from-palette($primary-palette, 50) 49%);
+    }
+    .categories-labels, .event-limit {
+      color: mat.m2-get-color-from-palette($primary-palette, 200);
+    }
+    .event-location {
+      color: mat.m2-get-color-from-palette($primary-palette, 300);
+    }
+  }
+
+  .image-placeholder {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 500);
+  }
+
+  .messages-title, .chats-title {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .messenger-chats {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 600);
+  }
+
+  .chat-messages {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 600);
+  }
+
+  .message {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .icon-placeholder {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+    mat-icon {
+      color: mat.m2-get-color-from-palette($primary-palette, 50);
+    }
+  }
+
+  .message-input {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .input-container, .no-chat-selected {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  *::-webkit-scrollbar {
+    background: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .chat-icon-button {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 600);
+  }
+
+  .chat-icon {
+    color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .chat-button-list {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .chat-message {
+    color: mat.m2-get-color-from-palette($primary-palette, 300);
+  }
+
+  .my-message {
+    background-color: mat.m2-get-color-from-palette($primary-palette, 50);
+    color: mat.m2-get-color-from-palette($primary-palette, 700);
+  }
+
+  .message-actions mat-icon {
+    color: mat.m2-get-color-from-palette($primary-palette, 200);
+  }
+}
+
+.message-author, .message-date {
+  color: mat.m2-get-color-from-palette($primary-palette, 300);
+}
+
+.success-text {
+  color: #40b632 !important;
+}
+
+[data-theme="light"] {
+  --menu-closed-color: #3c3c3c;
+  --menu-open-color: #efefef;
+
+  --chart-label-color: #3c3c3c;
+  --chart-first-line-color: #3a3a3a;
+  --chart-second-line-color: #676767;
+  --chart-third-line-color: #9a9a9a;
+  --chart-fourth-line-color: #e4e4e4;
+  --chart-grid-color: #e6e6e6;
+  --chart-floor-color: #bababa;
+}
+
+[data-theme="dark"] {
+  --menu-closed-color: #2b2b2b;
+  --menu-open-color: #383838;
+
+  --chart-label-color: #c3c3c3;
+  --chart-first-line-color: #e69740;
+  --chart-second-line-color: #3982df;
+  --chart-third-line-color: #9635e6;
+  --chart-fourth-line-color: #4de635;
+  --chart-grid-color: #4d4d4d;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #575757;
+}
+
+*::-webkit-scrollbar{
+  width: 7px;
+  height: 10px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}

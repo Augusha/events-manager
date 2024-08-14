@@ -1,0 +1,81 @@
+<div class="auth-page">
+  <div class="welcome-container">
+    <p class="welcome-title">Welcome!</p>
+    <a mat-list-item class="back-link" href="../dashboard">
+      <mat-icon matListItemIcon class="back-link-icon">arrow_back</mat-icon>
+      <span class="back-link-text" matListItemTitle>{{ 'Back to Dashboard' | translate }}</span>
+    </a>
+  </div>
+  <div class="auth-container">
+    <p class="auth-title">Sign Up</p>
+    <div class="social-container">
+      <button (click)="signUpWithGoogle()" mat-button class="auth-button primary-button">
+        <div class="button-container">
+          <img alt="google icon" src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" class="google-icon">
+          <span>Continue with Google</span>
+        </div>
+      </button>
+      <button (click)="signUpWithGitHub()" mat-button class="auth-button secondary-button">
+        <div class="button-container">
+          <img alt="github icon" src="https://img.icons8.com/?size=100&id=62856&format=png&color=583E8D" style="height:25px; width:25px">
+          <span>Continue with GitHub</span>
+        </div>
+      </button>
+      <button (click)="signUpWithTwitter()" mat-button class="auth-button secondary-button last-button">
+        <div class="button-container">
+          <img alt="twitter icon" src="https://img.icons8.com/?size=100&id=8824&format=png&color=339AF0" style="height:25px; width:25px">
+          <span>Continue with Twitter</span>
+        </div>
+      </button>
+    </div>
+    <div class="divider-container">
+      <div class="line">
+        <mat-divider></mat-divider>
+      </div>
+      <div class="text divider-text">or</div>
+      <div class="line">
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form">
+        <div class="half-fields name-fields">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Firstname</mat-label>
+            <input minlength="3" matInput name="firstname" type="text" required formControlName="firstname">
+            <mat-error *ngIf="registerForm.get('firstname')?.hasError('required')">Required!</mat-error>
+            <mat-error *ngIf="registerForm.get('firstname')?.hasError('minlength')">Too short!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Lastname</mat-label>
+            <input minlength="3" matInput name="lastname" type="text" required formControlName="lastname">
+            <mat-error *ngIf="registerForm.get('lastname')?.hasError('required')">Required!</mat-error>
+            <mat-error *ngIf="registerForm.get('lastname')?.hasError('minlength')">Too short!</mat-error>
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput name="email" type="email" required formControlName="email">
+          <mat-error *ngIf="registerForm.get('email')?.hasError('required')">Required!</mat-error>
+          <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Invalid email address</mat-error>
+        </mat-form-field>
+        <div class="half-fields">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Password</mat-label>
+            <input minlength="8" matInput name="password" type="password" required formControlName="password">
+            <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Required!</mat-error>
+            <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Too short!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Repeat Password</mat-label>
+            <input minlength="8" matInput name="confirmPassword" type="password" required formControlName="confirmPassword">
+            <mat-error *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Required!</mat-error>
+            <mat-error *ngIf="registerForm.get('confirmPassword')?.hasError('minlength')">Too short!</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-flat-button color="primary" type="submit" class="auth-button primary-button">Sign Up</button>
+    </form>
+    <p class="auth-link">Already have an account? <a [routerLink]="'../login'" href="#" class="link">Log In</a></p>
+  </div>
+</div>

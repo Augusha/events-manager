@@ -1,0 +1,54 @@
+<div class="auth-page">
+  <div class="welcome-container">
+    <p class="welcome-title">Welcome<br>back!</p>
+    <a mat-list-item class="back-link" href="../dashboard">
+      <mat-icon matListItemIcon class="back-link-icon">arrow_back</mat-icon>
+      <span class="back-link-text" matListItemTitle>{{ 'Back to Dashboard' | translate }}</span>
+    </a>
+  </div>
+  <div class="auth-container">
+    <p class="auth-title">Log In</p>
+    <div class="social-container">
+      <button (click)="signInWithGoogle()" mat-button class="auth-button primary-button">
+        <div class="button-container">
+          <img alt="google icon" src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" class="google-icon">
+          <span>Continue with Google</span>
+        </div>
+      </button>
+      <button (click)="signInWithGitHub()" mat-button class="auth-button secondary-button">
+        <div class="button-container">
+          <img alt="github icon" src="https://img.icons8.com/?size=100&id=62856&format=png&color=583E8D" style="height:26px; width:26px">
+          <span>Continue with GitHub</span>
+        </div>
+      </button>
+      <button (click)="signInWithTwitter()" mat-button class="auth-button secondary-button last-button">
+        <div class="button-container">
+          <img alt="twitter icon" src="https://img.icons8.com/?size=100&id=8824&format=png&color=339AF0" style="height:23px; width:23px">
+          <span>Continue with Twitter</span>
+        </div>
+      </button>
+    </div>
+    <div class="divider-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <div class="text divider-text">or</div>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="margin-top: 15px">
+      <mat-form-field appearance="outline" class="auth-input email-input">
+        <mat-label>Email Address</mat-label>
+        <input name="email" matInput type="email" required formControlName="email">
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Required!</mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Too short!</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="auth-input">
+        <mat-label>Password</mat-label>
+        <input matInput name="password" type="password" required formControlName="password">
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Required!</mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">Too short!</mat-error>
+      </mat-form-field>
+      <button mat-flat-button color="primary" type="submit" class="auth-button primary-button">Log in</button>
+    </form>
+    <a [routerLink]="'../login'" class="link forgot-password" >Forgot Password?</a>
+    <p class="auth-link">Don’t have an account? <a [routerLink]="'../signup'" class="link">Signup Now.</a></p>
+  </div>
+</div>

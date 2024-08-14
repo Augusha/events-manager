@@ -1,0 +1,14 @@
+<div class="charts">
+  <mat-grid-list [cols]="breakpoint" [rowHeight]="gridHeight" [gutterSize]="'35px'" (window:resize)="onResize($event)">
+    <mat-grid-tile [colspan]="activeEvents">
+      <mat-card appearance="outlined" class="card">
+        <app-active-events-statistics/>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=1>
+      <mat-card appearance="outlined" class="card">
+        <app-popular-categories/>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

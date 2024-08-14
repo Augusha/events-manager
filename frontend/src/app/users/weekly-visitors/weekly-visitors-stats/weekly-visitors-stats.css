@@ -1,0 +1,16 @@
+.title {
+  margin-bottom: 0 !important;
+}
+
+.card-text-container{
+  align-items: center;
+  height: 100%;
+}
+
+.difference {
+  margin-bottom: 0;
+}
+
+.last {
+  border: none;
+}

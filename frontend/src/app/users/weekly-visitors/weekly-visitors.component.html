@@ -1,0 +1,14 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="330px" [gutterSize]="'30px'" (window:resize)="onResize($event)">
+
+  <mat-grid-tile [colspan]=1>
+    <div class="cards-container">
+      <app-weekly-visitors-stats/>
+    </div>
+
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="activeEvents">
+    <mat-card appearance="outlined" class="card">
+      <app-weekly-visitors-chart/>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

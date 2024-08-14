@@ -1,0 +1,12 @@
+<div class="messenger mat-elevation-z8">
+  <div class="messenger-box" [class.fullwidth]="isChatListHidden">
+    <app-messenger-box [selectedChat]="selectedUser"></app-messenger-box>
+  </div>
+  <div class="messenger-chats" [class.hidden]="isChatListHidden">
+    <app-messenger-users (userSelected)="onUserSelected($event)"></app-messenger-users>
+  </div>
+  <div class="blur-overlay" *ngIf="!isChatListHidden && isSmallScreen"></div>
+  <button mat-icon-button class="toggle-chat-list-button" (click)="toggleChatList()">
+    <mat-icon>{{ isChatListHidden ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+  </button>
+</div>

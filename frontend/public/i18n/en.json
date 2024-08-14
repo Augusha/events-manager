@@ -1,0 +1,115 @@
+{
+  "sidenav": {
+    "search": "Search",
+    "dashboard": "Dashboard",
+    "events": "Events",
+    "reports": "Reports/Analytics",
+    "inbox": "Messenger",
+    "media": "Media",
+    "users": "Users",
+    "settings": "Settings"
+  },
+  "header": {
+    "title": {
+      "event-manager": "Event Manager"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "theme-option": "Theme",
+    "theme-switch": "Light or Dark theme",
+    "theme-adaptive": "Adaptive theme (depends on time of day)",
+    "language-option": "Language",
+    "language-en": "English",
+    "language-ua": "Ukrainian"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "stats": "Active Events Statistics",
+    "categories": "Popular Categories",
+    "total-events": "Total Events",
+    "total-income": "Total Income",
+    "total-sessions": "Total Sessions",
+    "conv-rate": "Conversation Rate",
+    "recent-event-owners": "Recent Event Owners",
+    "owner-name": "Name",
+    "owner-orderDate": "Order Date",
+    "owner-phone": "Phone number",
+    "owner-location": "Location",
+    "owner-registered": "Registered"
+  },
+  "users": {
+    "title": "Users Manager",
+    "weekly-visitors": {
+      "unique-visitors": {
+        "title": "Unique Visitors",
+        "subtitle": "Visitors for the current month"
+      },
+      "incoming-events": {
+        "title": "Incoming Events",
+        "subtitle": "Average Future events quantity"
+      },
+      "today-events": {
+        "title": "Today Events",
+        "subtitle": "Events that will be happened today"
+      },
+      "chart": {
+        "title": "Weekly visitors"
+      }
+    },
+    "all-users": {
+      "title": "Users"
+    },
+    "position": "Position",
+    "positions": {
+      "product-manager": "Product Manager"
+    },
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "email": "Email",
+    "role": "Role",
+    "roles": {
+      "admin": "Admin",
+      "user": "User"
+    }
+  },
+  "tables": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "login": {
+    "title": "Вхід"
+  },
+  "events": {
+    "title": "Events Manager",
+    "header": "Events",
+    "create-event": "Create Event",
+    "create-details": "Event Details",
+    "create-info": "Additional Information",
+    "create-pricing": "Pricing and Limits",
+    "create-title": "Title",
+    "create-description": "Description",
+    "create-start": "Start date",
+    "create-end": "End date",
+    "create-location": "Location",
+    "create-address": "Address",
+    "create-organizer": "Organizer",
+    "create-icon": "Icon",
+    "create-cost": "Cost",
+    "create-limit": "Limit",
+    "create-alert": "Fill fields correctly!",
+    "create-success": "All fields are correct!",
+    "create-back": "Back to Events",
+    "create-categories": "Categories",
+    "create-category": "Category",
+    "create-labels": "Labels",
+    "create-label": "Label",
+    "create-field-error": "Field required!"
+  },
+  "loading": {
+    "title": "Loading..."
+  },
+  "inbox": {
+    "title": "Messenger"
+  }
+}

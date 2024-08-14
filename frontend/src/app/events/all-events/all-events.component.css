@@ -1,0 +1,53 @@
+mat-card-content {
+  position: relative;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+.title-icon-container {
+  margin-bottom: 2px;
+}
+
+.title {
+  margin-bottom: 0 !important;
+}
+
+.card-icon {
+  width: 36px;
+}
+
+.card-text {
+  margin-bottom: 0;
+}
+
+.categories-labels {
+  font-size: 11px;
+}
+
+.event-organizer {
+  font-size: 12px;
+}
+
+.event-limit, .event-dates {
+  font-size: 12px;
+}
+
+.bottom-container {
+  padding-top: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  right: 25px;
+  padding-bottom: 15px;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.value-container {
+  display: flex;
+  justify-content: space-between;
+}

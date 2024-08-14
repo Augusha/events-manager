@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+  <p><strong>Organizer:</strong> {{ data.organizer }}</p>
+  <p><strong>Description:</strong> {{ data.description }}</p>
+  <p><strong>Category:</strong> {{ getRow(data.categories) }} </p>
+  <p><strong>City:</strong> {{ data.location }}</p>
+  <p><strong>Address:</strong> {{ data.address}}</p>
+  <p><strong>Cost:</strong> {{ data.cost | currency:'USD':'symbol' }}</p>
+  <p><strong>Limit:</strong> {{ data.limit }}</p>
+  <p><strong>Dates:</strong> {{ data.startDate | date:'mediumDate' }} - {{ data.endDate | date:'mediumDate' }}</p>
+  <button mat-button mat-dialog-close class="delete-button" (click)="deleteEvent()">Delete</button>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close class="edit-button" (click)="editEvent()">Edit</button>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

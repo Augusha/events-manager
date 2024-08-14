@@ -1,0 +1,114 @@
+{
+  "sidenav": {
+    "search": "Пошук",
+    "dashboard": "Панель керування",
+    "events": "Події",
+    "reports": "Звіти/Аналітика",
+    "inbox": "Месенджер",
+    "media": "Медіа",
+    "users": "Користувачі",
+    "settings": "Налаштування"
+  },
+  "header": {
+    "title": {
+      "event-manager": "Менеджер подій"
+    }
+  },
+  "settings": {
+    "title": "Налаштування",
+    "theme-option": "Тема",
+    "theme-switch": "Світла або Темна тема",
+    "theme-adaptive": "Адаптивна тема (залежить від часу дня)",
+    "language-option": "Мова",
+    "language-en": "Англійська (English)",
+    "language-ua": "Українська"
+  },
+  "dashboard": {
+    "title": "Панель керування",
+    "stats": "Статистика активних подій",
+    "categories": "Популярні категорії",
+    "total-events": "Всього подій",
+    "total-income": "Загальний дохід",
+    "total-sessions": "Всього сесій",
+    "conv-rate": "Кількість розмов",
+    "recent-event-owners": "Останні власники подій",
+    "owner-name": "Ім'я",
+    "owner-orderDate": "Дата заказу",
+    "owner-phone": "Номер телефону",
+    "owner-location": "Розташування",
+    "owner-registered": "Зареєстрований"
+  },
+  "users": {
+    "title": "Менеджер користувачів",
+    "weekly-visitors": {
+      "unique-visitors": {
+        "title": "Унікальні відвідувачі",
+        "subtitle": "Відвідувачі за цей місяць"
+      },
+      "incoming-events": {
+        "title": "Майбутні події",
+        "subtitle": "Середня кількість майбутніх подій"
+      },
+      "today-events": {
+        "title": "Сьогоднішні події",
+        "subtitle": "Події, які відбудуться сьогодні"
+      },
+      "chart": {
+        "title": "Тижневі відвідувачі"
+      }
+    },
+    "all-users": {
+      "title": "Користувачі"
+    },
+    "position": "Позиція",
+    "firstname": "Ім'я",
+    "lastname": "Прізвище",
+    "email": "Пошта",
+    "role": "Роль",
+    "roles": {
+      "admin": "Адміністратор",
+      "user": "Користувач"
+    },
+    "positions": {
+      "product-manager": "Продукт менеджер"
+    }
+  },
+  "tables": {
+    "yes": "Так",
+    "no": "Ні"
+  },
+  "login": {
+    "title": "Вхід"
+  },
+  "events": {
+    "title": "Менеджер подій",
+    "header": "Події",
+    "create-event": "Створити подію",
+    "create-details": "Деталі події",
+    "create-info": "Додаткова інформація",
+    "create-pricing": "Ціна та ліміти",
+    "create-title": "Назва",
+    "create-description": "Опис",
+    "create-start": "Початкова дата",
+    "create-end": "Кінцева дата",
+    "create-location": "Локація(місто)",
+    "create-address": "Адрес",
+    "create-organizer": "Організатор",
+    "create-icon": "Піктограма",
+    "create-cost": "Ціна",
+    "create-limit": "Ліміт",
+    "create-alert": "Заповніть всі поля",
+    "create-success": "Всі поля правильні!",
+    "create-back": "Назад до подій",
+    "create-categories": "Категорії",
+    "create-category": "Категорія",
+    "create-labels": "Мітки",
+    "create-label": "Мітка"
+  },
+  "loading": {
+    "title": "Завантаження..."
+  },
+  "inbox": {
+    "title": "Месенджер"
+  }
+}

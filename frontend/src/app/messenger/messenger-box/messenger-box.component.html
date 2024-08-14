@@ -1,0 +1,64 @@
+<div *ngIf="selectedChat" class="messages-container">
+  <div class="messages-title">
+    <p>{{ selectedChat.name }}</p>
+  </div>
+  <div #chatMessages class="chat-messages">
+    <div *ngFor="let message of messages; let i = index">
+      <div *ngIf="isDifferentDay(i)" class="date-separator">
+        <p>{{ formatDateForSeparator(message.createdAt) }}</p>
+      </div>
+      <div class="message-container"
+           [ngClass]="{'stacked': isSameAuthorAsPrevious(i), 'large-gap': isMoreThanOneHourDifference(i)}">
+        <div class="image-container">
+          <img
+            *ngIf="(!isMessageFromCurrentUser(message.senderId) && (!isSameAuthorAsNext(i) || isMoreThanOneHourDifferenceNext(i)) && message.senderAvatar)"
+            class="message-avatar"
+            [src]="message.senderAvatar"
+            alt="Avatar">
+          <div class="icon-placeholder"
+               *ngIf="(!isMessageFromCurrentUser(message.senderId) && (!isSameAuthorAsNext(i) || isMoreThanOneHourDifferenceNext(i)) && !message.senderAvatar)">
+            <mat-icon class="message-avatar">person</mat-icon>
+          </div>
+        </div>
+        <div *ngIf="isMessageFromCurrentUser(message.senderId)" class="message-actions">
+          <button mat-icon-button (click)="startEditing(message.id, message.content)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteMessage(message.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <div
+          [ngClass]="{
+            'my-message': isMessageFromCurrentUser(message.senderId),
+            'other-message': !isMessageFromCurrentUser(message.senderId),
+            'stacked': isSameAuthorAsPrevious(i)}"
+          class="message">
+          <p
+            *ngIf="!isMessageFromCurrentUser(message.senderId) && (!isSameAuthorAsPrevious(i) || isMoreThanOneHourDifference(i))"
+            class="message-text message-author"> {{ message.senderFirstname }} </p>
+          <div class="content-date">
+            <p class="message-text message-content"> {{ message.content }} </p>
+            <p class="message-text message-date"> {{ formatDate(message.createdAt) }} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="input-container">
+    <mat-form-field class="message-input" appearance="outline">
+      <textarea subscriptSizing="dynamic" matInput [(ngModel)]="newMessage" placeholder="Type a message"></textarea>
+    </mat-form-field>
+    <div class="message-buttons-container">
+      <button mat-flat-button (click)="sendMessage()" class="message-send-button">
+        {{ editingMessageId ? 'Update' : 'Send' }}
+      </button>
+      <button *ngIf="editingMessageId" mat-flat-button (click)="cancelEditing()" class="message-cancel-button">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="!selectedChat" class="no-chat-selected">
+  <p>Select a chat to start!</p>
+</div>

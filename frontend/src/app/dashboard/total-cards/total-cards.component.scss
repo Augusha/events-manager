@@ -1,0 +1,50 @@
+mat-card{
+  border-radius: 15px !important;
+}
+
+.card-content{
+  padding: 25px !important;
+}
+
+.title{
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.title-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-icon{
+  transform: scale(1.5);
+}
+
+.value{
+  font-size: 1.6em;
+  margin-bottom: 4px;
+}
+
+.difference{
+  font-size: 0.9em;
+}
+
+.first mat-card-content div *, .first mat-card-content .value {
+
+}
+
+.first mat-card-content .difference {
+
+}
+
+.first {
+  border: none;
+}
+
+@media (max-width: 700px) {
+}
+
+
+

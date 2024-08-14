@@ -1,0 +1,100 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 16px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 8px;
+}
+
+.checkbox-text {
+  margin: 0;
+}
+
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.image-container {
+  height: 230px;
+  width: 230px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.selected-image {
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+}
+
+.image-placeholder {
+  width: 230px;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.file-input-container {
+  margin-top: 16px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 40px;
+}
+
+.dialog-title {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+mat-error {
+  color: red;
+}
+
+@media (min-width: 900px) {
+  .user-form {
+    flex-direction: row;
+  }
+
+  .user-details {
+    flex: 2;
+  }
+
+  .profile-picture {
+    flex: 1;
+  }
+}

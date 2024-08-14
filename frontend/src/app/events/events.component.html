@@ -1,0 +1,11 @@
+<div class="events">
+  <div class="events-header">
+    <span class="header-text">{{ 'events.header' | translate }}</span>
+    <button
+      mat-button
+      [routerLink]="['./create']"
+      class="dark-button">{{ 'events.create-event' | translate }}</button>
+  </div>
+  <app-all-events/>
+</div>
+

@@ -1,0 +1,19 @@
+@import '../../users/all-users/all-users.component.css';
+
+.table {
+  background-color: transparent;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.title {
+ margin: 30px;
+}
+
+.table * {
+}
+
+.paginator {
+}

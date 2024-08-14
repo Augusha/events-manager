@@ -1,0 +1,29 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="300px" [gutterSize]="'15px'" (window:resize)="onResize($event)">
+  <mat-grid-tile *ngFor="let card of dataSource.data; let first = first" (click)="openEventDetails(card)">
+    <mat-card appearance="outlined" class="card" [ngClass]="{ first: first}">
+      <mat-card-content class="card-content">
+        <div class="title-icon-container">
+          <div class="title-text-container">
+            <p class="card-text title">{{ card.title | translate }}</p>
+            <p class="card-text event-organizer">{{ card.organizer }}</p>
+          </div>
+          <mat-icon class="card-icon">{{ card.icon }}</mat-icon>
+        </div>
+        <div class="categories-labels">
+          <span class="category"> {{getRow(card.categories)}}</span>
+          <span class="category"></span>
+        </div>
+        <p class="card-text event-description">{{ card.description }}</p>
+        <div class="gradient bottom-container">
+          <p class="card-text event-location">{{ card.location }}</p>
+          <div class="value-container">
+            <p class="card-text value event-value">{{ card.cost | currency:'USD':'symbol' }}</p>
+            <p class="card-text event-limit">Limit: {{ card.limit }}</p>
+          </div>
+          <p class="card-text event-dates">{{ card.startDate | date:'mediumDate' }}
+            - {{ card.endDate | date:'mediumDate' }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

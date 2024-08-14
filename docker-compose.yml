@@ -1,0 +1,49 @@
+version: "3.8"
+
+networks:
+  university_local:
+    name: university_local
+
+services:
+  mariadb:
+    image: mariadb
+    hostname: 0.0.0.0
+    networks:
+      - university_local
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: admin
+      MARIADB_DATABASE: events_management
+      MARIADB_USER: root
+      MARIADB_PASSWORD: admin
+    volumes:
+      - ${PWD}/mariadb:/var/lib/mysql
+      - ./conf.d:/etc/mysql/conf.d
+
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      ADMINER_DEFAULT_SERVER: mariadb
+    networks:
+      - university_local
+    ports:
+      - "8090:8080"
+    links:
+      - mariadb
+
+
+  # Frontend container App
+#  frontend.cinewav.testing:
+#    image: nginx:1.13.3-alpine
+#    volumes:
+#      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+#    restart: always
+#    ports:
+#      - 8080:80
+#    networks:
+#      - university_local

@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <button aria-label="Open menu" class="button-menu-open"
+          (click)="toggleMenu()"
+          [style.min-width]="setWidth()"
+          [style.background-color]="setColor()"
+          [style.color]="setTextColor()">
+    <mat-icon class="menu-icon">{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+  <div class="content">
+    <div *ngIf="currentPage() !== ''"
+      [routerLink]="'dashboard'"
+      class="page-title">{{ currentPage() | translate }}</div>
+    <span class="spacer"></span>
+    <div *ngIf="!isAuth">
+      <button mat-button class="auth-button" [routerLink]="'/login'">
+        <mat-icon class="auth-icon">person</mat-icon>
+        <span class="auth-text">Log In</span>
+      </button>
+    </div>
+    <button *ngIf="isAuth" mat-icon-button class="notifications-icon" aria-label="Open Notifications">
+      <mat-icon matBadge="2" matBadgeColor="accent" aria-hidden="false">notifications</mat-icon>
+    </button>
+    <div *ngIf="isAuth" class="profile-info">
+      <div class="profile-text">
+        <p style="margin-bottom: -8px;">
+          <span class="profile-name">{{ firstname }}</span>
+          <span *ngIf="lastname !== 'undefined'" class="profile-name">{{ lastname }}</span>
+        </p>
+        <span class="profile-position">{{ "users.positions." + position | translate }}</span>
+      </div>
+      <button mat-icon-button class="person-icon-button">
+        <mat-icon *ngIf="!image" class="person-icon">person</mat-icon>
+        <img *ngIf="image" src="{{ image }}" class="profile-image" alt="Profile Image">
+      </button>
+    </div>
+  </div>
+</mat-toolbar>

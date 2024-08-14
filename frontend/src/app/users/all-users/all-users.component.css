@@ -1,0 +1,49 @@
+.table {
+  background-color: transparent;
+}
+
+.card {
+  overflow: hidden;
+  margin-top: 35px;
+}
+
+.card-title-container{
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+}
+
+.add-user-button {
+  font-size: 16px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.option {
+  width: 160px;
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+.mat-mdc-row {
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.select-option {
+  font-size: 14px;
+}
+
+.paginator {
+  background-color: transparent;
+}

@@ -1,0 +1,17 @@
+<div class="chats-title">
+  <p>Chats</p>
+</div>
+
+<mat-list>
+  <mat-list-item *ngFor="let chat of chats" (click)="selectUser(chat)" class="chat-button-list">
+    <div class="chat-container">
+      <button mat-icon-button class="chat-icon-button">
+        <mat-icon class="chat-icon">person</mat-icon>
+      </button>
+      <div class="chat-info">
+        <p class="chat-name">{{ chat.name }}</p>
+        <p class="chat-message">Last message</p>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>

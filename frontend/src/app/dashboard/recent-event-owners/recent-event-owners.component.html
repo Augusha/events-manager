@@ -1,0 +1,27 @@
+<mat-card appearance="outlined" class="card">
+  <p class="card-text title">{{ 'dashboard.recent-event-owners' | translate }}</p>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="table">
+      <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by {{ 'dashboard.owner-' + column | translate }}"
+        > {{ 'dashboard.owner-' + column | translate }} </th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngIf="column !== 'registered'; else registeredColumn">
+            {{ element[column] }}
+          </ng-container>
+          <ng-template #registeredColumn>
+            <span *ngIf="element.registered === 'tables.yes' || element.registered === 'tables.no'">{{ element.registered | translate }}</span>
+            <span *ngIf="element.registered !== 'tables.yes' && element.registered !== 'tables.no'">{{ element[column] }}</span>
+          </ng-template>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</mat-card>

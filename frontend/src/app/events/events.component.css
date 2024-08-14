@@ -1,0 +1,26 @@
+.events{
+  padding: 40px;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+  .events {
+    padding: 15px;
+  }
+}
+
+.events-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-text {
+  font-size: 36px;
+}
+
+.dark-button {
+  border-radius: 10px!important;
+  padding: 0 25px;
+}

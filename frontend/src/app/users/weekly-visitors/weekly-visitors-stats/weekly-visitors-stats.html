@@ -1,0 +1,17 @@
+<mat-grid-list cols="1" rowHeight="96px" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let card of cards; let first = first; let last = last">
+    <mat-card appearance="outlined" class="card" [ngClass]="{ first: first, last: last}">
+      <mat-card-content class="card-content">
+        <div class="title-icon-container">
+          <div class="card-text-container">
+            <p class="card-text title">{{ card.title | translate }}</p>
+            <p class="card-text difference">{{ card.subtitle | translate }}</p>
+          </div>
+          <p class="card-text value">{{ card.value | formatValue:card.format }}</p>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+

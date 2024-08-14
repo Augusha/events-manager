@@ -1,0 +1,81 @@
+<p mat-dialog-title class="dialog-title">Add new user</p>
+<div mat-dialog-content class="dialog-content">
+  <form class="user-form" [formGroup]="addUserForm">
+    <div class="user-details">
+      <p class="user-details-text">User details</p>
+
+      <div class="name-fields">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>First Name</mat-label>
+          <input minlength="3" matInput type="firstname" required formControlName="firstname">
+          <mat-error *ngIf="addUserForm.get('firstname')?.hasError('required')">First Name is required</mat-error>
+          <mat-error *ngIf="addUserForm.get('firstname')?.hasError('minlength')">First Name must be at least 3 characters long</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Last Name</mat-label>
+          <input minlength="3" matInput type="lastname" required formControlName="lastname">
+          <mat-error *ngIf="addUserForm.get('lastname')?.hasError('required')">Last Name is required</mat-error>
+          <mat-error *ngIf="addUserForm.get('lastname')?.hasError('minlength')">Last Name must be at least 3 characters long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" required formControlName="email">
+        <mat-error *ngIf="addUserForm.get('email')?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="addUserForm.get('email')?.hasError('email')">Invalid email address</mat-error>
+      </mat-form-field>
+
+      <div class="name-fields">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Password</mat-label>
+          <input minlength="8" matInput required formControlName="password">
+          <mat-error *ngIf="addUserForm.get('password')?.hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="addUserForm.get('password')?.hasError('minlength')">Password must be at least 8 characters long</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Repeat Password</mat-label>
+          <input minlength="8" matInput required formControlName="confirmPassword">
+          <mat-error *ngIf="addUserForm.get('confirmPassword')?.hasError('required')">Repeat Password is required</mat-error>
+          <mat-error *ngIf="addUserForm.get('confirmPassword')?.hasError('minlength')">Repeat Password must be at least 8 characters long</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="name-fields">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Position</mat-label>
+          <input matInput required formControlName="position">
+          <mat-error *ngIf="addUserForm.get('position')?.hasError('required')">Position is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Role</mat-label>
+          <mat-select required formControlName="role">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="user">User</mat-option>
+          </mat-select>
+          <mat-error *ngIf="addUserForm.get('role')?.hasError('required')">Role is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="profile-picture">
+      <p class="user-details-text">Profile picture</p>
+      <div class="image-container">
+        <div class="image-placeholder" *ngIf="!addUserForm.value.profileImage"></div>
+        <img *ngIf="addUserForm.value.profileImage" src="{{ addUserForm.value.profileImage }}" class="selected-image"
+             alt="Profile Image">
+      </div>
+      <div class="file-input-container">
+        <button mat-raised-button class="dark-button" (click)="triggerFileInput()">Select image</button>
+        <input type="file" hidden accept="image/png, image/jpeg" (change)="onFileSelected($event)" #fileInput>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-flat-button (click)="onSubmit()" class="dark-button">Add User</button>
+  <button mat-flat-button class="light-button" mat-dialog-close>Cancel</button>
+</div>

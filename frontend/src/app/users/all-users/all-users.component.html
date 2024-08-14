@@ -1,0 +1,33 @@
+<mat-card appearance="outlined" class="card">
+  <div class="card-title-container">
+    <p class="card-text title">{{ 'users.all-users.title' | translate }}</p>
+
+    <div class="table-options">
+      <button *ngIf="isUserAdmin()" mat-flat-button class="add-user-button" (click)="openAddDialog()">Add user</button>
+    </div>
+  </div>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="table">
+      <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by {{ 'users.' + column | translate }}"
+        >{{ 'users.' + column | translate }} </th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngIf="column !== 'position' && column !== 'role'; else positionsColumn">
+            {{ element[column] }}
+          </ng-container>
+          <ng-template #positionsColumn>
+            <span *ngIf="column === 'position'"> {{ 'users.positions.' + element[column] | translate }} </span>
+            <span *ngIf="column === 'role'"> {{ 'users.roles.' + element[column] | translate }} </span>
+          </ng-template>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row (click)="openEditDialog(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <mat-paginator [length]="dataSource.paginator?.length" [pageSize]="dataSource.paginator?.pageSize" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</mat-card>

@@ -1,0 +1,111 @@
+.create-container {
+  padding: 35px;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.delete-category-button:hover {
+  background-color: rgba(255, 0, 0, 0.55);
+  transition: background-color 0.2s;
+}
+
+.header-text{
+  font-size: 36px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card {
+  padding: 15px 15px 0;
+  width: 100%;
+  height: 100%;
+}
+
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+.description {
+  resize: none;
+  height: 155px!important;
+}
+
+.address {
+  height: 78px!important;
+  resize: none;
+}
+
+.double-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.double-fields button {
+  height: 56px;
+  width: 100px;
+}
+
+.confirm-fields {
+  display: flex;
+}
+
+.alert-text {
+  margin: 0 15px;
+}
+
+.create-button {
+  padding: 0 25px;
+  border-radius: 10px!important;
+}
+
+mat-error {
+  color: red;
+}
+
+mat-form-field {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 550px) {
+  .create-container {
+    padding: 15px;
+  }
+  .events-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .create-button {
+    width: 100%;
+  }
+
+  .confirm-field {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .alert-text {
+    display: table;
+    margin: 10px auto;
+  }
+
+  mat-card {
+    padding: 0;
+  }
+
+  .card-content {
+    padding-bottom: 5px!important;
+  }
+}

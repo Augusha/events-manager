@@ -1,0 +1,262 @@
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 90px);
+}
+
+.messages-title {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 5px!important;
+}
+
+.date-separator {
+  text-align: center;
+  margin: 20px 0 10px;
+  color: #888;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.message-container:hover .message-actions {
+  width: fit-content;
+}
+
+.message-container:not(:first-child) {
+  margin-top: 10px;
+}
+
+.message-container.large-gap {
+  margin-top: 10px !important;
+  .message.stacked {
+    border-radius: 15px 15px 15px 0;
+  }
+  .my-message.stacked {
+    border-radius: 15px 15px 2px 15px;
+  }
+}
+
+.message-container.stacked{
+  margin-top: 3px;
+}
+
+.message {
+  width: fit-content;
+  max-width: 400px;
+  margin-left: 10px;
+  padding: 7px 12px;
+  border-radius: 15px 15px 15px 0;
+}
+
+.message.stacked {
+  border-radius: 2px 15px 15px 2px;
+}
+
+.my-message {
+  margin-left: 0;
+  align-self: flex-end;
+  border-radius: 15px 15px 0 15px;
+}
+
+.my-message.stacked {
+  border-radius: 15px 2px 2px 15px;
+}
+
+.image-container {
+  width: 38px;
+  height: 38px;
+}
+
+.icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.icon-placeholder .mat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-placeholder .mat-icon {
+}
+
+.message-avatar {
+  min-height: 38px;
+  min-width: 38px;
+  max-height: 38px;
+  max-width: 38px;
+  border-radius: 50%;
+}
+
+.content-date {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.message-text {
+  margin: 0;
+}
+
+.message-content {
+  max-inline-size: 350px;
+  overflow-wrap: break-word;
+}
+
+.input-container {
+  height: 80px;
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.message-input {
+  width: 100%;
+}
+
+.message-input textarea {
+  resize: none;
+}
+
+.message-send-button {
+  width: 80px;
+}
+
+.message-send-button, .message-cancel-button, .message-input textarea {
+  margin: 0 0 0 5px;
+  height: 100%;
+}
+
+.message-cancel-button {
+  color: #ca3f3f !important;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.no-chat-selected {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-chat-selected p {
+  margin: 15px;
+  padding: 10px 15px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.message-actions {
+  width: 0;
+  overflow: hidden;
+  height: 38px;
+  margin-left: auto;
+  transition: width 0.3s;
+  display: flex;
+}
+
+.message-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  margin: 0;
+  padding: 0;
+}
+
+.message-actions mat-icon {
+  transform: scale(0.8);
+}
+
+.message-buttons-container {
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .messages-title {
+    height: 60px;
+  }
+
+  .message-content {
+    max-inline-size: 300px;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 600px) {
+  .messages-container {
+    height: calc(100vh - 70px);
+  }
+
+  .message-avatar {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+  }
+
+  .message {
+    max-width: 300px;
+  }
+
+  .message-content {
+    max-inline-size: 220px;
+    overflow-wrap: break-word;
+    font-size: 15px;
+  }
+
+  .message-date {
+    font-size: 15px;
+  }
+
+  .message-author {
+    font-size: 13px;
+  }
+
+  .message-buttons-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .message-buttons-container button {
+    max-width: 38px;
+    padding: 0;
+  }
+}
